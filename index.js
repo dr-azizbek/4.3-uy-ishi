@@ -70,12 +70,62 @@ const students = [
     { name: "Joey", group: "NT-70", voted: true },
     { name: "Jeff", group: "NT-79", voted: true },
     { name: "Zack", group: "NT-79", voted: false },
+    { name: "Hack", group: "NT-100", voted: true },
+    { name: "Hack", group: "NT-100", voted: true },
+    { name: "Hack", group: "NT-100", voted: true },
+    { name: "Hack", group: "NT-100", voted: true },
 ];
 const studentsByGroup = students.reduce((grs, prd) => {
     const { group } = prd;
     grs[group] = grs[group] ?? [];
     grs[group].push(prd);
     return grs;
+}, {});
+console.log(studentsByGroup);
+
+
+// const colorConfig={
+//     red:true,
+//     blue:false,
+//     green:true,
+//     black:true,
+//     yellow:false,
+// }
+// const colors=["pink","red","blue"]
+// console.log(colorConfig.colors[1])
+
+console.log("Hello".concat(" World"));
+console.log("Hello".concat(" wor","l","d"));
+console.log("Hi ".repeat(3))
+
+console.log("-------")
+
+
+const products = [
+    { name: "Bob", group: "NT-79", voted: true },
+    { name: "Jake", group: "NT-77", voted: true },
+    { name: "Kate", group: "NT-70", voted: false },
+    { name: "Sam", group: "NT-77", voted: false },
+    { name: "Phil", group: "NT-70", voted: true },
+    { name: "Ed", group: "NT-79", voted: true },
+    { name: "Tami", group: "NT-77", voted: true },
+    { name: "Mary", group: "NT-70", voted: false },
+    { name: "Becky", group: "NT-79", voted: false },
+    { name: "Joey", group: "NT-70", voted: true },
+    { name: "Jeff", group: "NT-79", voted: true },
+    { name: "Zack", group: "NT-79", voted: false },
+    { name: "Hack", group: "NT-100", voted: true },
+    { name: "Hack", group: "NT-100", voted: true },
+    { name: "Hack", group: "NT-100", voted: true },
+    { name: "Hack", group: "NT-100", voted: true },
+  ];
+
+  let result = products.reduce((x, y) => {
+
+      (x[y.group] = x[y.group] || []).push(y);
+
+      return x;
+
   }, {});
-  console.log(studentsByGroup);
-  
+
+  console.log(result);
